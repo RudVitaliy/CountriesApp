@@ -24,7 +24,7 @@ class RepositoryImpl @Inject constructor(
         mapper.mapListDbModelToListEntity(it)
     }
 
-    suspend fun loadData(countryName: String?): Country? {
+    override suspend fun loadData(countryName: String?): Country? {
         var countries: List<Country>? = null
         try {
             countries = countryName?.let { restCountriesApi.getCountryByName(it) }

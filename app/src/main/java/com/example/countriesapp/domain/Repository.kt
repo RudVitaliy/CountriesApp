@@ -11,4 +11,6 @@ interface Repository {
 
     suspend fun deleteCountry(country: Country)
 
+    suspend fun loadData(countryName: String?): Country?
+
 }
